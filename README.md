@@ -6,4 +6,3 @@ Cool features:
 
 * Mongoose pre hooks
 * JSON Web Tokens
-* Express router

@@ -18,7 +18,6 @@ class UserController {
   }
 
   login(req, res) {
-    console.log(secret);
     User.findOne({email: req.body.email})
       .then(user => {
         if(user === null) {

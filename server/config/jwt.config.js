@@ -7,8 +7,6 @@ const authenticate = (req, res, next) => {
     req.cookies.usertoken,
     secret,
     (err, payload) => {
-      console.log(payload);
-      console.log(req.params._id);
       if (err) { 
         res.status(401).json({verified: false});
       } else {

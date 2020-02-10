@@ -4,6 +4,7 @@ const express = require('express'),
       db_name = 'userdemo',
          port = 8000,
           app = express();
+          
     
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(express.json());
