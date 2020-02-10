@@ -35,6 +35,13 @@ class UserController {
       .then(users => res.json(users))
       .catch(err => res.json(err));
   }
+
+  getOne(req, res) {
+    User.findOne({_id: req.params._id})
+      .then(user => res.json(user))
+      .catch(err => res.json(err));
+  }
+
 }
 
 module.exports = new UserController();
