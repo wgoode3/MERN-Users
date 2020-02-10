@@ -10,7 +10,9 @@ const SignIn = props => {
 
   const login = e => {
     e.preventDefault();
-    axios.post("http://localhost:8000/api/login", {email, password})
+    axios.post("http://localhost:8000/api/login", {email, password}, {
+      withCredentials: true
+    })
       .then(res => {
         console.log(res);
         if(res.data.msg === "invalid login attempt") {

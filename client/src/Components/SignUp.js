@@ -13,7 +13,9 @@ const SignUp = props => {
   const register = e => {
     e.preventDefault();
     const newUser = {username, email, password, confirm};
-    axios.post("http://localhost:8000/api/register", newUser)
+    axios.post("http://localhost:8000/api/register", newUser, {
+      withCredentials: true
+    })
       .then(res => {
         console.log(res);
         if(res.data.errors) {

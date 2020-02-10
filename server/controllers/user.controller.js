@@ -1,13 +1,20 @@
 const User = require('../models/user.model');
 const bcrypt = require('bcrypt');
+const jwt = require("jsonwebtoken");
+const secret = require('../config/jwt.config');
+
 
 class UserController {
   
   register(req, res) {
     const user = new User(req.body);
     user.save()
-      .then( () => res.json({msg: "ok"}))
-      .catch( err => res.json(err));
+      .then( () => {
+        res
+          .cookie( "usertoken", jwt.sign( { id: user._id }, secret ), {httpOnly: true} )
+          .json( {msg: "success!", user: user} );
+      })
+      .catch( err => res.json(err) );
   }
 
   login(req, res) {
@@ -19,7 +26,9 @@ class UserController {
           bcrypt.compare(req.body.password, user.password)
             .then(passwordIsValid => {
               if(passwordIsValid) {
-                res.json({msg: "success"});
+                res
+                  .cookie( "usertoken", jwt.sign( { id: user._id }, secret ), {httpOnly: true} )
+                  .json({msg: "success!"});
               } else {
                 res.json({msg: "invalid login attempt"});
               }
