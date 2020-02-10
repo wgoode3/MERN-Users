@@ -1,6 +1,7 @@
 import React from 'react';
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
+import UserList from './Components/UserList';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <SignIn />
         <SignUp />
       </div>
+      <UserList />
     </>
   );
 }

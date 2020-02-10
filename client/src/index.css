@@ -44,3 +44,17 @@
     font-size: 0.9rem;
     padding: 0.3rem;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+}
+
+tr:nth-child(odd) {
+    background-color: #eee;
+}
