@@ -14,7 +14,7 @@ const authenticate = (req, res, next) => {
       } else {
         if(req.params._id && req.params._id !== payload._id) {
           res.status(401).json({verified: false});
-        } else {protectedRoprotectedRouteute
+        } else {
           next();
         } 
       }
