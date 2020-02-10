@@ -6,8 +6,11 @@ import SignUp from './Components/SignUp';
 function App() {
   return (
     <>
-      <SignIn />
-      <SignUp />
+      <h1 className="jumbotron">MERN Users</h1>
+      <div className="container">
+        <SignIn />
+        <SignUp />
+      </div>
     </>
   );
 }

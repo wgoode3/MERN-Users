@@ -1,0 +1,46 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.container > fieldset {
+    flex: 1;
+}
+
+.jumbotron {
+    background-color: rebeccapurple;
+    color: #fff;
+    text-align: center;
+    font-size: 3rem;
+    padding: 0.5rem;
+}
+
+.form-group {
+    display: flex;
+}
+
+.form-group > label {
+    width: 120px !important;
+}
+
+.form-group > input {
+    flex: 1;
+}
+
+.form-group > span, .error-message {
+    flex: 1;
+    color: tomato;
+    text-align: center;
+}
+
+.btn {
+    background-color: mediumseagreen;
+    color: #fff;
+    border: none;
+    border-radius: 0px !important;
+    font-size: 0.9rem;
+    padding: 0.3rem;
+}

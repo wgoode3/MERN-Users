@@ -27,46 +27,47 @@ const SignUp = props => {
     <fieldset>
       <legend>Sign Up</legend>
       <form onSubmit={ register }>
-        <p>
-          Username:&nbsp;
+        <p className="form-group">
+          <label>Username:</label>
           <input 
             type="text" 
             name="username" 
             onChange={ e => setUsername(e.target.value) } 
             value={ username }
           />
-          <span>{errors.username ? errors.username.message : ""}</span>
+          {errors.username ? <span>{errors.username.message}</span> : ""}
         </p>
-        <p>
-          Email:&nbsp;
+        <p className="form-group">
+          <label>Email:</label>
           <input 
             type="text" 
             name="email" 
             onChange={ e => setEmail(e.target.value) } 
             value={ email }
           />
-          <span>{errors.email ? errors.email.message : ""}</span>
+          {errors.email ? <span>{errors.email.message}</span> : ""}
         </p>
-        <p>
-          Password:&nbsp;
+        <p className="form-group">
+          <label>Password:</label>
           <input 
             type="password" 
             name="email" 
             onChange={ e => setPassword(e.target.value) } 
             value={ password }
           />
-          <span>{errors.password ? errors.password.message : ""}</span>
+          {errors.password ? <span>{errors.password.message}</span> : ""}
         </p>
-        <p>
-          Confirm:&nbsp;
+        <p className="form-group">
+          <label>Confirm:</label>
           <input 
             type="password" 
             name="confirm" 
             onChange={ e => setConfirm(e.target.value) } 
             value={ confirm }
           />
+          {errors.confirm ? <span>{errors.confirm.message}</span> : ""}
         </p>
-        <input type="submit" value="Sign Up" />
+        <input type="submit" value="Sign Up" className="btn" />
       </form>
     </fieldset>
   );

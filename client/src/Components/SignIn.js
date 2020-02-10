@@ -26,8 +26,8 @@ const SignIn = props => {
     <fieldset>
       <legend>Sign In</legend>
       <form onSubmit={ login }>
-        <p>
-          Email:&nbsp;
+        <p className="form-group">
+          <label>Email:</label>
           <input 
             type="text" 
             name="email" 
@@ -35,8 +35,8 @@ const SignIn = props => {
             value={ email }
           />
         </p>
-        <p>
-          Password:&nbsp;
+        <p className="form-group">
+          <label>Password:</label>
           <input 
             type="password" 
             name="email" 
@@ -44,8 +44,8 @@ const SignIn = props => {
             value={ password }
           />
         </p>
-        <input type="submit" value="Sign In" />
-        <p>{errorMessage ? errorMessage : ""}</p>
+        <input type="submit" value="Sign In" className="btn" />
+        <p className="error-message">{errorMessage ? errorMessage : ""}</p>
       </form>
     </fieldset>
   );

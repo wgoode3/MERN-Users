@@ -32,7 +32,7 @@ UserSchema.virtual('confirm')
 
 UserSchema.pre('validate', function(next) {
     if (this.password !== this.confirm) {
-        this.invalidate('password', 'password must match confirm password');
+        this.invalidate('confirm', 'password must match confirm password');
     }
     next();
 });
